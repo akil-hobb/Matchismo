@@ -12,6 +12,7 @@
 @interface CardMatchingGame()
 @property (strong, nonatomic) NSMutableArray *cards;
 @property (nonatomic) int score;
+@property (nonatomic) NSString *lastAction;
 @end
 
 @implementation CardMatchingGame
@@ -22,6 +23,10 @@
     return _cards;
 }
 
+-(NSMutableArray*) actionElements {
+    if(!_actionElements) _actionElements=[[NSMutableArray alloc]initWithObjects:@"?",@"?",@"?", nil];
+    return _actionElements;
+}
 
 -(id)initWithCardCount:(NSUInteger)cardCount usingDeck:(Deck *)deck {
     self = [super init];
@@ -52,28 +57,45 @@
 #define FLIP_COST 1
 
 -(void) flipCardAtIndex:(NSUInteger)index {
+    NSNumber *tempScore;
     Card *card = [self cardAtIndex:index];
+    [self.actionElements replaceObjectAtIndex:0 withObject:card.contents];
     
     if(!card.isUnplayable) {
         if(!card.isFaceUp) {
+             self.lastAction = @"Flip";
             for(Card *otherCard in self.cards)
             {
                 if(otherCard.isFaceUp && !otherCard.isUnplayable) {
+                    
+                    
+                    
+                    [self.actionElements replaceObjectAtIndex:1 withObject:otherCard.contents];
+
                     int matchScore = [card match:@[otherCard]];
                     if(matchScore) {
                         otherCard.unplayable = YES;
                         card.unplayable = YES;
-                        self.score += matchScore * MATCH_BONUS;
-                    }else {
+                        tempScore=  [NSNumber numberWithInt:matchScore * MATCH_BONUS];
+                        self.score += [tempScore intValue];
+                        self.lastAction = @"Match";
+                        
+                        }   else {
                         otherCard.faceUp = NO;
+                             tempScore=  [NSNumber numberWithInt:MISMATCH_PENALTY];
                         self.score -= MISMATCH_PENALTY;
-                    }
+                        self.lastAction = @"Mismatch";
+                        }
+                    [self.actionElements replaceObjectAtIndex:2 withObject:tempScore];
                     break;
+                    
                 }
             }
             self.score -= FLIP_COST;
         }
         card.faceUp = !card.isFaceUp;
+        
+        
     }
     
 }

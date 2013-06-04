@@ -14,7 +14,8 @@
 -(id) initWithCardCount :(NSUInteger) cardCount usingDeck:(Deck*) deck;
 -(void) flipCardAtIndex: (NSUInteger) index;
 -(Card*) cardAtIndex: (NSUInteger) index;
-
+@property (nonatomic, readonly) NSString *lastAction;
+@property (strong, nonatomic) NSMutableArray *actionElements;
 @property (nonatomic, readonly) int score;
 
 @end
