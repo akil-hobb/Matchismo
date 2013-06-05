@@ -13,7 +13,7 @@
 @synthesize suit = _suit;
 
 
-
+//method works for both 2 card matches and 3 card matches
 -(int) match:(NSArray *)otherCards {
     int score=0;
     
@@ -23,6 +23,20 @@
             score=1;
         } else if(otherCard.rank == self.rank) {
             score=4;
+        }
+    }
+    
+    if(otherCards.count ==2) {
+        PlayingCard *firstCard = [otherCards objectAtIndex:0];
+        PlayingCard *secondCard =[otherCards objectAtIndex:1];
+        if([firstCard.suit isEqualToString:self.suit]) {
+            if([secondCard.suit isEqualToString:self.suit]) {
+                score = 2; //0.01294117647
+            }
+        }else if (firstCard.rank==self.rank)
+        {
+            if(secondCard.rank==self.rank)
+            score = 5; //0.04166666666
         }
     }
     

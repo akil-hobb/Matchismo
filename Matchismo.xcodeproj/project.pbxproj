@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD6F123F175DDA4000AFA221 /* cardback.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AD6F123E175DDA4000AFA221 /* cardback.jpg */; };
 		ADB3EF6E175C95990004D3A0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB3EF6D175C95990004D3A0 /* UIKit.framework */; };
 		ADB3EF70175C95990004D3A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB3EF6F175C95990004D3A0 /* Foundation.framework */; };
 		ADB3EF72175C95990004D3A0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB3EF71175C95990004D3A0 /* CoreGraphics.framework */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AD6F123E175DDA4000AFA221 /* cardback.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cardback.jpg; sourceTree = "<group>"; };
 		ADB3EF6A175C95990004D3A0 /* Matchismo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Matchismo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADB3EF6D175C95990004D3A0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		ADB3EF6F175C95990004D3A0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -110,6 +112,7 @@
 		ADB3EF74175C95990004D3A0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AD6F123E175DDA4000AFA221 /* cardback.jpg */,
 				ADB3EF7C175C95990004D3A0 /* CardGameAppDelegate.h */,
 				ADB3EF7D175C95990004D3A0 /* CardGameAppDelegate.m */,
 				ADB3EF75175C95990004D3A0 /* Matchismo-Info.plist */,
@@ -197,6 +200,7 @@
 				ADB3EF82175C95990004D3A0 /* Default@2x.png in Resources */,
 				ADB3EF84175C95990004D3A0 /* Default-568h@2x.png in Resources */,
 				ADB3EF87175C95990004D3A0 /* MainStoryboard.storyboard in Resources */,
+				AD6F123F175DDA4000AFA221 /* cardback.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +341,7 @@
 				ADB3EF8F175C95990004D3A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
